@@ -1,0 +1,39 @@
+{
+  "name": "pdf-printer",
+  "version": "1.0.0",
+  "description": "Print HTML pages to PDF",
+  "main": "index.js",
+  "dependencies": {
+    "mri": "^1.1.4",
+    "puppeteer-core": "^1.20.0"
+  },
+  "devDependencies": {
+    "docdash": "^1.1.1",
+    "eslint": "^6.5.1",
+    "eslint-plugin-jsdoc": "^15.12.0",
+    "jsdoc": "^3.6.3",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.11.0",
+    "tape-catch": "^1.0.6"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node ./test/index.js | tap-diff",
+    "precheckStyle": "rm -f ./reports/eslint.txt",
+    "checkStyle": "eslint index.js skip.js todo.js test.js bin/** lib/** examples/** > ./reports/eslint.txt || echo 'ESLint results saved to `reports/eslint.txt`' && cat ./reports/eslint.txt",
+    "predoc": "rm -rf ./reports/jsdoc",
+    "doc": "jsdoc -d reports/jsdoc -c .jsdoc.json --readme README.md -r *.js lib",
+    "postdoc": "echo 'Documentation available at `reports/jsdoc/index.html`'",
+    "checkAudit": "npm shrinkwrap && npm audit > ./reports/audit.log || cat ./reports/audit.log; rm npm-shrinkwrap.json"
+  },
+  "author": "Marcin Konicki (https://ahwayakchih.neoni.net)",
+  "license": "ISC",
+  "homepage": "https://github.com/ahwayakchih/pdf-printer",
+  "bugs": {
+    "url": "https://github.com/ahwayakchih/pdf-printer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ahwayakchih/pdf-printer.git"
+  }
+}
