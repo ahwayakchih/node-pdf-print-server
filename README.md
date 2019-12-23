@@ -18,7 +18,6 @@ Since this is a private project (at least at the moment), clone it, go to its di
 ```sh
 git clone git@github.com:ahwayakchih/node-pdf-print-server.git
 cd node-pdf-print-server
-npm install --production
 ```
 
 ## Starting server (native)
@@ -26,6 +25,7 @@ npm install --production
 Start server from command line:
 
 ```sh
+npm install --production
 npm start 0.0.0.0:8080
 ```
 
@@ -34,13 +34,13 @@ That will start server listening for connections on any hostname, on port `8080`
 ## Starting server (docker)
 
 ```sh
-docker run --rm -v ~/www/pdf-printer:/app -p 8080:8080 -it ahwayakchih/nodeapp:puppeteer /bin/sh -c "npm install && npm start 0.0.0.0:8080"
+docker run --rm -v ~/www/pdf-printer:/app -p 8080:8080 -it ahwayakchih/nodeapp:puppeteer /bin/sh -c "npm install --production && npm start 0.0.0.0:8080"
 ```
 
 ## Starting server (podman)
 
 ```sh
-podman run --rm --userns=keep-id -v ./:/app -p 8080:8080 -it ahwayakchih/nodeapp:puppeteer /bin/sh -c "npm install && npm start 0.0.0.0:8080"
+podman run --rm --userns=keep-id -v ./:/app -p 8080:8080 -it ahwayakchih/nodeapp:puppeteer /bin/sh -c "npm install --production && npm start 0.0.0.0:8080"
 ```
 
 ## Usage
