@@ -9,7 +9,7 @@ This project depends on [Node.js](https://nodejs.org/) v12+.
 
 It also depends on Chrome or Chromium browser. If you do not want to install additional Chrome with this module, make sure that there is a `CHROME_BIN` environmental variable set, pointing to browser executable.
 
-You can also run it using Docker or Podman, in which case no installation will be necessary.
+You can also run it using Docker or Podman, in which case no installation will be necessary (skip the "Installation" step).
 
 ## Installation
 
@@ -18,6 +18,19 @@ Since this is a private project (at least at the moment), clone it, go to its di
 ```sh
 git clone git@github.com:ahwayakchih/node-pdf-print-server.git
 cd node-pdf-print-server
+npm install --production
+```
+
+If you have Chrome or Chromium browser enabled, set `CHROME_BIN` environment variable pointing to its executable and install "thin" version of `puppeteer` module:
+
+```sh
+npm install --no-save puppeteer-core
+```
+
+Otherwise, install "full" version of `puppeteer` module (which will include local installation of Chrome browser):
+
+```sh
+npm install --no-save puppeteer
 ```
 
 ## Starting server (native)
@@ -25,7 +38,6 @@ cd node-pdf-print-server
 Start server from command line:
 
 ```sh
-npm install --production
 npm start 0.0.0.0:8080
 ```
 
