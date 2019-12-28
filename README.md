@@ -43,6 +43,12 @@ npm start 0.0.0.0:8080
 
 That will start server listening for connections on any hostname, on port `8080`.
 
+If you want to hide it behind some reverse-proxy (that could also serve as SSL terminator), you can run server as localhost only instead:
+
+```sh
+npm start localhost:8080
+```
+
 ## Starting server (docker)
 
 ```sh
