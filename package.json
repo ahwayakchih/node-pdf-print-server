@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Print HTML pages to PDF",
   "main": "index.js",
+  "bin": {
+    "pdf-print-server": "bin/pdf-print-server.js"
+  },
   "dependencies": {
     "mri": "^1.1.4",
     "puppeteer-core": "^1.20.0"
